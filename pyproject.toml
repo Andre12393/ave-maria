@@ -1,0 +1,29 @@
+[project]
+name = "ave-maria"
+version = "0.1.0"
+description = "Proyecto Ave Maria"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bcrypt>=4.0.0",
+    "email-validator>=2.3.0",
+    "flet>=0.25.0",
+    "flet-cli>=0.82.2",
+    "mysql-connector-python>=9.0.0",
+    "pydantic[email]>=2.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+
+#aqui definimos el comando corto
+#quitamos el src porque definimos "src" como la raiz
+
+app="main:main"
+
+[tool.uv]
+package = true
+
+#Esta secion es crucial para que python vea el ontenido de src como el nivel raiz 
+[tool.setuptools.package-dir]
+"" = "src"
